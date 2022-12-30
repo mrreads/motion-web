@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +18,15 @@ body, .wrapper {
 body {
   cursor: none;
   overflow-x: hidden;
+  font-size: 19px;
+}
+
+body, input, textarea, a, button {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .container {
@@ -40,12 +52,12 @@ body {
 
   }
   &[data-type='second'] {
-    background-color: #FFFFFF;
     width: 64px;
     height: 64px;
   }
   &[data-type='third'] {
-    background-color: #FFFFFF;
+    background-color: #fff;
+    mix-blend-mode: difference;
     width: 32px;
     height: 32px;
   }
@@ -61,6 +73,23 @@ body {
     display: flex;
     align-items: center;
     height: 100%;
+
+    & h1 {
+      & span {
+        font-size: 139px;
+      }
+      font-size: 96px;
+      color: #FFFFFF;
+      line-height: .9;
+    }
+  }
+  & .title {
+    min-width: 700px;
+  }
+  & .canvas {
+    flex-grow: 1;
+    height: 100%;
+    margin-left: calc(-50% + 50px);
   }
 }
 
@@ -81,7 +110,6 @@ body {
   }
   z-index: 1700;
   position: relative;
-  mix-blend-mode: difference;
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
 }

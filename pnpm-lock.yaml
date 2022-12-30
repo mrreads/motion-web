@@ -4,11 +4,13 @@ specifiers:
   '@ashthornton/asscroll': ^2.0.11
   gsap: ^3.11.4
   sass: ^1.57.1
+  three: ^0.148.0
   vite: ^4.0.0
 
 dependencies:
   '@ashthornton/asscroll': 2.0.11
   gsap: 3.11.4
+  three: 0.148.0
 
 devDependencies:
   sass: 1.57.1
@@ -442,6 +444,10 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /three/0.148.0:
+    resolution: {integrity: sha512-8uzVV+qhTPi0bOFs/3te3RW6hb3urL8jYEl6irjCWo/l6sr8MPNMcClFev/MMYeIxr0gmDcoXTy/8LXh/LXkfw==}
+    dev: false
 
   /to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
