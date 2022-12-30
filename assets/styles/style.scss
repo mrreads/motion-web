@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body, .wrapper {
+  min-height: 100%;
+}
+
+body {
+  cursor: none;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.cursor, .cursor.invert {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 100%;
+  z-index: 1000;
+  transition: .1s all, .3s height, .3s width, .6s background-color, .6s color;
+
+  &[data-type='first'] {
+
+  }
+  &[data-type='second'] {
+    background-color: #FFFFFF;
+    width: 64px;
+    height: 64px;
+  }
+  &[data-type='third'] {
+    background-color: #FFFFFF;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.first {
+  min-height: 800px;
+  height: 100vh;
+  
+  background-color: #FB8C00;
+
+  & .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.second {
+  min-height: 800px;
+
+  background-color: #00ACC1;
+}
+
+.third {
+  overflow: hidden;
+  min-height: 800px;
+  display: flex;
+  background-color: #fff;
+  & .container {
+    display: flex;
+    align-items: center;
+  }
+  z-index: 1700;
+  position: relative;
+  mix-blend-mode: difference;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+@media (hover: none) {
+  .cursor {
+    opacity: 0;
+    z-index: -1;
+  }
+}
