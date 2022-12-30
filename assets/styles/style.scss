@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 
   width: 12px;
   height: 12px;
-  background-color: red;
+  background-color: #FFFFFF;
   border-radius: 100%;
   z-index: 1000;
   transition: .1s all, .3s height, .3s width, .6s background-color, .6s color;
@@ -52,8 +52,8 @@ h1, h2, h3, h4, h5, h6 {
 
   }
   &[data-type='second'] {
-    width: 64px;
-    height: 64px;
+    width: 16px;
+    height: 16px;
   }
   &[data-type='third'] {
     background-color: #fff;
@@ -65,7 +65,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .first {
   min-height: 800px;
-  height: 100vh;
+  height: calc(100vh + 250px);
+  padding-bottom: 250px;
   
   background-color: #FB8C00;
 
@@ -94,9 +95,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .second {
+  overflow: hidden;
+  animation: 6s ease-in 1s infinite reverse both running wave;
   min-height: 800px;
 
+  margin-top: -120px;
   background-color: #00ACC1;
+
+  display: flex;
+  justify-content: center;
+
+  & .container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  & .title {
+    text-align: right;
+    text-transform: uppercase;
+    margin-left: 100px;
+  }
+  & h1 {
+    & span {
+      font-size: 169px;
+    }
+    font-size: 96px;
+    color: #FFFFFF;
+    line-height: .9;
+  }
+
+  & .image {
+    margin-top: -1200px;
+    width: 600px;
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes wave {
+  0% {
+    clip-path: polygon(31.6% 0%, 51.2% 13%, 76.9% 0%, 100% 3.1%, 100% 49.7%, 100% 100%, 0% 100%, 0% 5.2%, 11.8% 8.9%);
+  }
+  50% {
+    clip-path: polygon(31.6% 6.7%, 51.2% 0%, 77.5% 5.7%, 100% 3.1%, 100% 49.7%, 100% 100%, 0% 100%, 0% 5.2%, 11.9% 0%);
+  }
+  100% {
+    clip-path: polygon(31.6% 0%, 51.2% 13%, 76.9% 0%, 100% 3.1%, 100% 49.7%, 100% 100%, 0% 100%, 0% 5.2%, 11.8% 8.9%);
+  }
 }
 
 .third {

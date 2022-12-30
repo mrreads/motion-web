@@ -132,5 +132,3 @@ const loop = () => {
     requestAnimationFrame(loop);
 };
 loop();
-
-console.log(camera)

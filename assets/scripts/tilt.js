@@ -2,7 +2,7 @@
 import gsap from 'gsap';
 
 let cx, cy, clientX, clientY, dx, dy, tiltx, tilty, radius, degree;
-const container = document.querySelector('.first .container');
+const container = document.querySelector('.second .container');
 
 cx = window.innerWidth / 2
 cy = window.innerHeight / 2
@@ -19,6 +19,6 @@ function update() {
     tiltx = dy / cy;
     tilty = dx / cx;
     radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
-    degree = radius * 25;
+    degree = radius * 30;
     gsap.to(container, 1, { transform: `rotate3d( ${tiltx}, ${tilty}, 0, ${degree}deg )` });
 }
