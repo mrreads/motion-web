@@ -4,7 +4,10 @@ asscroll.enable();
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CSSRulePlugin } from 'gsap/all';
+
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(CSSRulePlugin);
 gsap.ticker.add(asscroll.update)
 ScrollTrigger.defaults({ scroller: asscroll.containerElement })
 ScrollTrigger.scrollerProxy(asscroll.containerElement, {
@@ -31,4 +34,16 @@ gsap.to(".second .image", {
     },
     y: 1200,
     rotate: 30
+});
+
+gsap.to(CSSRulePlugin.getRule(".four::before"), { scrollTrigger: { trigger: ".gold", scrub: false, start: "top 600px" }, cssRule: { left: -10 }});
+gsap.to(CSSRulePlugin.getRule(".four::after"), { scrollTrigger: { trigger: ".gold", scrub: false, start: "top 600px" }, cssRule: { left: 10 }});
+
+gsap.to(".four .container", {
+    scrollTrigger: {
+        start: "top -200px",
+        scrub: false,
+        trigger: ".colours",
+    },
+    opacity: 1,
 });
