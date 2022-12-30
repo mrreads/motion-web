@@ -9,7 +9,7 @@ const renderer = new THREE.WebGLRenderer({canvas, alpha: true, antialias: true }
 renderer.shadowMap.enabled = true;
 
 const fov = 55;
-const aspect = 1;
+const aspect = 2;
 const near = 0.1;
 const far = 5;
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
