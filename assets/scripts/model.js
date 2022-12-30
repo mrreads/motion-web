@@ -118,16 +118,16 @@ const loop = () => {
     renderer.render(scene, camera);
     const delta = targetRocketPosition * Math.sin(Math.PI * 2 * t);
     if (phone) {
-      phone.position.y = delta;
-      camera.lookAt(phone.position.x, 0, phone.position.z);
+        phone.rotation.y += 0.003;
+        phone.position.y = delta;
+        camera.lookAt(phone.position.x, 0, phone.position.z);
 
-      if (degree) {
-        camera.rotateX(tiltx * 0.1)
-        camera.rotateY(tilty * 0.2)
+        if (degree) {
+            camera.rotateX(tiltx * 0.1)
+            camera.rotateY(tilty * 0.1)
 
-        phone.rotation.x = tiltx * 0.7;
-        phone.rotation.y = tilty;
-      }
+            phone.rotation.x = tiltx * 0.6;
+        }
     }
     requestAnimationFrame(loop);
 };
