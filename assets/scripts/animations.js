@@ -41,9 +41,32 @@ gsap.to(CSSRulePlugin.getRule(".four::after"), { scrollTrigger: { trigger: ".gol
 
 gsap.to(".four .container", {
     scrollTrigger: {
-        start: "top -200px",
+        start: "top 200px",
         scrub: false,
         trigger: ".colours",
     },
     opacity: 1,
 });
+
+gsap.to(".four", {
+    scrollTrigger: {
+        start: "top 200px",
+        scrub: false,
+        trigger: ".more",
+    },
+    backgroundColor: 'white'
+});
+
+gsap.to(".four .color-2", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.0, trigger: ".more" }, ease: "power4.in", duration: 2, x: 175 });
+gsap.to(".four .color-3", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.1, trigger: ".more" }, ease: "power4.in", duration: 3, x: 175 * 2 });
+gsap.to(".four .color-4", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.2, trigger: ".more" }, ease: "power4.in", duration: 4, x: 175 * 3 });
+gsap.to(".four .color-5", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.3, trigger: ".more" }, ease: "power4.in", duration: 5, x: 175 * 4 });
+
+
+gsap.to(".gold",        { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 2 }, ease: "power4.in", width: '0%' });
+gsap.to(".silver",      { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 1 }, ease: "power4.in", width: '0%' });
+gsap.to(".deep-purple", { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 4 }, ease: "power4.in", width: '0%' });
+gsap.to(".red",         { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 3 }, ease: "power4.in", width: '0%' });
+
+
+

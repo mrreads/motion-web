@@ -54,7 +54,8 @@ img {
   transition: .1s all, .3s height, .3s width, .6s background-color, .6s color;
 
   &[data-type='first'] {
-
+    width: 18px;
+    height: 18px;
   }
   &[data-type='second'] {
     width: 16px;
@@ -65,6 +66,19 @@ img {
     mix-blend-mode: difference;
     width: 32px;
     height: 32px;
+  }
+  &[data-type='four'] {
+    background-color: #FB8C00;
+    width: 16px;
+    height: 16px;
+  }
+  &[data-type='five'] {
+    background-color: #FFFFFF;
+  }
+  &[data-type='colours'] {
+    width: 21px;
+    height: 21px;
+    background-color: #FB8C00;
   }
 }
 
@@ -103,7 +117,7 @@ img {
 
 .second {
   overflow: hidden;
-  animation: 6s ease-in 1s infinite both running wave;
+  animation: 3s ease-in 1s infinite both running wave;
   min-height: 800px;
 
   margin-top: -120px;
@@ -167,12 +181,29 @@ img {
   backface-visibility: visible;
 }
 
+.colours {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .colors {
   padding: 15px 0;
+  height: 77px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  
   & h1 {
     width: 100%;
     text-align: center;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   &.gold {
@@ -197,7 +228,7 @@ img {
 .four {
   background-color: #EF5350;
   & .container {
-    min-height: 800px;
+    padding: 100px 0;
     z-index: 1700;
     position: relative;
     display: flex;
@@ -227,11 +258,29 @@ img {
   }
 }
 
+.colors-animation {
+  max-height: 500px;
+  height: 500px;
+  width: 100%;
+  position: relative;
+  & img {
+    height: 100%;
+    position: absolute;
+  }
+
+  & .color-1 { margin-left: 0px; }
+  & .color-2 { margin-left: 50px; }
+  & .color-3 { margin-left: 100px; }
+  & .color-4 { margin-left: 150px; }
+  & .color-5 { margin-left: 200px; }
+}
+
 .five {
   display: flex;
 
   min-height: 800px;
   background-color: #FB8C00;
+  color: #FFFFFF;
   
   & .container {
     display: flex;
