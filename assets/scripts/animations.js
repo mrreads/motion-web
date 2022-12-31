@@ -36,12 +36,12 @@ gsap.to(".second .image", {
     rotate: 30
 });
 
-gsap.to(CSSRulePlugin.getRule(".four::before"), { scrollTrigger: { trigger: ".gold", scrub: false, start: "top 600px" }, cssRule: { left: -10 }});
-gsap.to(CSSRulePlugin.getRule(".four::after"), { scrollTrigger: { trigger: ".gold", scrub: false, start: "top 600px" }, cssRule: { left: 10 }});
+gsap.to(CSSRulePlugin.getRule(".four::before"), { scrollTrigger: { trigger: ".gold", scrub: 1, start: "top 300px" }, cssRule: { left: -10 }});
+gsap.to(CSSRulePlugin.getRule(".four::after"), { scrollTrigger: { trigger: ".gold", scrub: 1, start: "top 300px" }, cssRule: { left: 10 }});
 
 gsap.to(".four .container", {
     scrollTrigger: {
-        start: "top 200px",
+        start: "top -100px",
         scrub: false,
         trigger: ".colours",
     },
@@ -50,7 +50,7 @@ gsap.to(".four .container", {
 
 gsap.to(".four", {
     scrollTrigger: {
-        start: "top 200px",
+        start: "top -200px",
         scrub: false,
         trigger: ".more",
     },
@@ -66,7 +66,7 @@ gsap.to(".four .color-5", { scrollTrigger: { start: "top 150px", end: "bottom -2
 gsap.to(".gold",        { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 2 }, ease: "power4.in", width: '0%' });
 gsap.to(".silver",      { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 1 }, ease: "power4.in", width: '0%' });
 gsap.to(".deep-purple", { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 4 }, ease: "power4.in", width: '0%' });
-gsap.to(".red",         { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 3 }, ease: "power4.in", width: '0%' });
+gsap.to(".red",         { scrollTrigger: { start: "1000px bottom", end: "bottom 0", trigger: ".colours", scrub: 3 }, ease: "power4.in", width: '0%' });
 
 
 
