@@ -435,10 +435,22 @@ img {
     }
   }
   .first .canvas {
-    margin-left: -500px;
+    margin-left: -550px;
   }
   .six .feature span, .six .feature p.big {
     font-size: 28px;
+  }
+  .second h1 span {
+    font-size: 136px;
+  }
+  .second h1 {
+    font-size: 78px;
+  }
+  .second .image {
+    min-width: 400px;
+  }
+  .second .title {
+    margin-left: 25px;
   }
 }
 
@@ -455,6 +467,21 @@ img {
   }
   .five span {
     font-size: 78px;
+  }
+  .second h1 span {
+    font-size: 116px;
+  }
+  .second h1 {
+    font-size: 58px;
+  }
+  .second .image {
+    min-width: 200px;
+  }
+  .second .title {
+    margin-left: 25px;
+  }
+  .first .canvas {
+    transform: scale(.8);
   }
 }
 
@@ -477,7 +504,23 @@ img {
     grid-template-rows: 100px 100px 100px 100px;
   }
   .five span {
-    font-size: 68px;
+    font-size: 38px;
+  }
+  .second h1 span {
+    font-size: 86px;
+  }
+  .second h1 {
+    font-size: 38px;
+  }
+  .second .image {
+    min-width: 200px;
+  }
+  .second .title {
+    margin-left: 25px;
+  }
+  .first .canvas {
+    margin-left: -600px;
+    transform: scale(.4);
   }
 }
 
@@ -501,5 +544,15 @@ img {
   }
   .five span {
     font-size: 12vw;
+  }
+  .first .container h1 span {
+    font-size: 52px;
+  }
+  .first .container h1 {
+    font-size: 32px;
+  }
+  .first .canvas {
+    margin-left: -600px;
+    transform: scale(.3);
   }
 }

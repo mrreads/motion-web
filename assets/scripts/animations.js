@@ -58,10 +58,10 @@ gsap.to(".four", {
     backgroundColor: 'white'
 });
 
-gsap.to(".four .color-2", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.0, trigger: ".more" }, ease: "power4.in", duration: 2, x: `${window.innerWidth / 42 * 1}%` });
-gsap.to(".four .color-3", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.1, trigger: ".more" }, ease: "power4.in", duration: 3, x: `${window.innerWidth / 42 * 2}%` });
-gsap.to(".four .color-4", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.2, trigger: ".more" }, ease: "power4.in", duration: 4, x: `${window.innerWidth / 42 * 3}%` });
-gsap.to(".four .color-5", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.3, trigger: ".more" }, ease: "power4.in", duration: 5, x: `${window.innerWidth / 42 * 4}%` });
+gsap.to(".four .color-2", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.0, trigger: ".more" }, ease: "power4.in", duration: 2, x: `${(window.innerWidth / 42) * 1}%` });
+gsap.to(".four .color-3", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.1, trigger: ".more" }, ease: "power4.in", duration: 3, x: `${(window.innerWidth / 42) * 2}%` });
+gsap.to(".four .color-4", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.2, trigger: ".more" }, ease: "power4.in", duration: 4, x: `${(window.innerWidth / 42) * 3}%` });
+gsap.to(".four .color-5", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.3, trigger: ".more" }, ease: "power4.in", duration: 5, x: `${(window.innerWidth / 42) * 4}%` });
 
 
 gsap.to(".gold",        { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 2 }, ease: "power4.in", width: '0%' });
