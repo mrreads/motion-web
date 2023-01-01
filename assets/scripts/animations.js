@@ -3,11 +3,12 @@ const asscroll = new ASScroll({ ease: 0.05, touchEase: 1, customScrollbar: false
 asscroll.enable();
 
 import { gsap } from "gsap";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CSSRulePlugin } from 'gsap/all';
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(CSSRulePlugin);
+gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
+
 gsap.ticker.add(asscroll.update)
 ScrollTrigger.defaults({ scroller: asscroll.containerElement })
 ScrollTrigger.scrollerProxy(asscroll.containerElement, {
@@ -57,10 +58,10 @@ gsap.to(".four", {
     backgroundColor: 'white'
 });
 
-gsap.to(".four .color-2", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.0, trigger: ".more" }, ease: "power4.in", duration: 2, x: 175 });
-gsap.to(".four .color-3", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.1, trigger: ".more" }, ease: "power4.in", duration: 3, x: 175 * 2 });
-gsap.to(".four .color-4", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.2, trigger: ".more" }, ease: "power4.in", duration: 4, x: 175 * 3 });
-gsap.to(".four .color-5", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.3, trigger: ".more" }, ease: "power4.in", duration: 5, x: 175 * 4 });
+gsap.to(".four .color-2", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.0, trigger: ".more" }, ease: "power4.in", duration: 2, x: `${window.innerWidth / 42 * 1}%` });
+gsap.to(".four .color-3", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.1, trigger: ".more" }, ease: "power4.in", duration: 3, x: `${window.innerWidth / 42 * 2}%` });
+gsap.to(".four .color-4", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.2, trigger: ".more" }, ease: "power4.in", duration: 4, x: `${window.innerWidth / 42 * 3}%` });
+gsap.to(".four .color-5", { scrollTrigger: { start: "top 150px", end: "bottom -200px", scrub: 1.3, trigger: ".more" }, ease: "power4.in", duration: 5, x: `${window.innerWidth / 42 * 4}%` });
 
 
 gsap.to(".gold",        { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 2 }, ease: "power4.in", width: '0%' });
@@ -68,5 +69,46 @@ gsap.to(".silver",      { scrollTrigger: { start: "-200px bottom", end: "bottom 
 gsap.to(".deep-purple", { scrollTrigger: { start: "-200px bottom", end: "bottom -80px", trigger: ".colours", scrub: 4 }, ease: "power4.in", width: '0%' });
 gsap.to(".red",         { scrollTrigger: { start: "1000px bottom", end: "bottom 0", trigger: ".colours", scrub: 3 }, ease: "power4.in", width: '0%' });
 
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".five",
+      pin: true,
+      pinType: isTouch ? 'fixed' : 'transform',
+      scrub: 0.5,
+      start: "top top",
+      end: "+=150%"
+    }
+  })
+  .to(".box", {
+    force3D: true, 
+    duration: 1,
+    xPercent: 100,
+    ease: "power1.inOut",
+    stagger: { amount: 1 }
+  })
+  .to(".box", { ease: "power1.out", duration: 1, rotation: "45deg" }, 0)
+  .to(".box", { ease: "power1.in", duration: 1, rotation: "0deg" }, 1);
 
 
+const counters = document.querySelectorAll('.feature span')
+gsap.from(counters, {
+    scrollTrigger: {
+        scrub: 1,
+        end: "bottom bottom",
+        trigger: ".six"
+    },
+    textContent: 1,
+    duration: 4,
+    ease: "power1.in",
+    snap: { textContent: 1 },
+    stagger: {
+        each: 0.5,
+        onUpdate: function() {
+            this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
+        },
+    }
+});
+
+
+const numberWithCommas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

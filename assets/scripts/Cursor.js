@@ -64,6 +64,12 @@ export default class Cursor {
         else if (point?.closest('.colours') || false) {
             this.element.dataset.type = 'colours';
         }
+        else if (point?.closest('.five') || false) {
+            this.element.dataset.type = 'five';
+        }
+        else if (point?.closest('.six') || false) {
+            this.element.dataset.type = 'six';
+        }
         else {
             //this.element.dataset.type = 'none';
         }
