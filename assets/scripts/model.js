@@ -4,6 +4,13 @@ import { TextureLoader } from 'three/src/loaders/TextureLoader';
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
+const modelPhone = '/models/phone.glb';
+const textDiffusion = '/models/phone_DIFFUSION.png';
+const textEmission = '/models/phone_EMISSION.png';
+const textNormal = '/models/phone_NORMAL.png';
+const textAO = '/models/phone_AO.png';
+const textAlpha = '/models/phone_ALPHA.png';
+
 const canvas = document.querySelector('.first .canvas');
 const renderer = new THREE.WebGLRenderer({canvas, alpha: true, antialias: true });
 renderer.shadowMap.enabled = true;
@@ -23,22 +30,22 @@ let phone;
 let loader = new GLTFLoader();
 
 let textureLoader = new TextureLoader();
-let diffuse =  textureLoader.load('/assets/models/phone_DIFFUSION.png');
+let diffuse =  textureLoader.load(textDiffusion);
 diffuse.flipY = false;
 
-let emissive =  textureLoader.load('/assets/models/phone_EMISSION.png');
+let emissive =  textureLoader.load(textEmission);
 emissive.flipY = false;
 
-let normal =  textureLoader.load('/assets/models/phone_NORMAL.png');
+let normal =  textureLoader.load(textNormal);
 normal.flipY = false;
 
-let ao =  textureLoader.load('/assets/models/phone_AO.png');
+let ao =  textureLoader.load(textAO);
 ao.flipY = false;
 
-let alpha =  textureLoader.load('/assets/models/phone_ALPHA.png');
+let alpha =  textureLoader.load(textAlpha);
 alpha.flipY = false;
 
-loader.load('/assets/models/phone.glb', (gltf) => {
+loader.load(modelPhone, (gltf) => {
     phone = gltf.scene.children[0];
 
     phone.children[0].material = new THREE.MeshPhysicalMaterial({ // [0] - Main
