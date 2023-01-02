@@ -1,24 +1,22 @@
-
 import gsap from 'gsap';
 
 let cx, cy, clientX, clientY, dx, dy, tiltx, tilty, radius, degree;
-const container = document.querySelector('.second .container');
+const container = document.querySelector('.seven');
 
-cx = window.innerWidth / 2
-cy = window.innerHeight / 2
+cx = window.innerWidth / 2;
+cy = window.innerHeight / 2;
 
 container.addEventListener('mousemove', e => {
     clientX = e.pageX
     clientY = e.pageY
     requestAnimationFrame(update)
 });
-
 function update() {
     dx = clientX - cx;
     dy = clientY - cy;
     tiltx = dy / cy;
     tilty = dx / cx;
     radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
-    degree = radius * 30;
-    gsap.to(container, 1, { transform: `rotate3d( ${tiltx}, ${tilty}, 0, ${degree}deg )` });
+    degree = radius * 36;
+    gsap.to(container.querySelector('.wrapper'), 1, { transform: `rotate3d( ${tiltx}, ${tilty}, 0, ${degree}deg )` });
 }

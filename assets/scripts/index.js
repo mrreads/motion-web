@@ -1,8 +1,11 @@
 import Cursor from './cursor';
 new Cursor().init();
 
-import './tilt';
+import './tilt-water';
 
 import './model';
 
-import './animations'
+import './animations';
+
+import './timer';
+import './tilt-timer';

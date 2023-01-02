@@ -121,5 +121,13 @@ gsap.from(counters, {
     }
 });
 
-
 const numberWithCommas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+gsap.from(".seven .left", {
+    scrollTrigger: {
+        scrub: .5,
+        end: "bottom 500px",
+        trigger: ".six",
+    },
+    x: -(window.innerWidth + 150)
+});
