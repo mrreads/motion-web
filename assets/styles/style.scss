@@ -261,30 +261,31 @@ img {
     transform: scaleX(1.09);
   }
   &::after {
+    z-index: 25;
     left: -110%;
     clip-path: polygon(0 0, 0% 100%, 100% 100%);
   }
   &::before {
+    z-index: 25;
     left: 110%;
     clip-path: polygon(0 0, 100% 0, 100% 100%);
   }
 }
 
 .colors-animation {
-  max-height: 500px;
-  height: 500px;
+  margin-top: 50px;
+  margin-bottom: 75px;
   width: 100%;
   position: relative;
-  & img {
-    height: 100%;
-    position: absolute;
-  }
+  
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
 
-  & .color-1 { margin-left: 0px; }
-  & .color-2 { margin-left: 50px; }
-  & .color-3 { margin-left: 100px; }
-  & .color-4 { margin-left: 150px; }
-  & .color-5 { margin-left: 200px; }
+  & img {
+    width: 100%;
+    transform: scale(1.8);
+  }
 }
 
 .five {
@@ -419,11 +420,17 @@ img {
       gap: 20px;
     }
   }
+  .colors-animation {
+    padding: 0 75px;
+  }
 }
 
 @media screen and (max-width: 1324px) {
   .six .feature span, .six .feature p.big {
     font-size: 38px;
+  }
+  .colors-animation {
+    margin: 0 0;
   }
 }
 
@@ -482,6 +489,17 @@ img {
   }
   .first .canvas {
     transform: scale(.8);
+  }
+  .colors-animation {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .colors-animation {
+    & img {
+      transform: scale(2.6);
+    }
   }
 }
 
@@ -554,5 +572,17 @@ img {
   .first .canvas {
     margin-left: -600px;
     transform: scale(.3);
+  }
+  .colors-animation {
+    padding: 0 25px;
+    & img {
+      transform: scale(2.4);
+    }
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .first {
+    height: auto;
   }
 }
