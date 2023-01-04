@@ -29,7 +29,7 @@ gsap.to(".second .image", {
     scrollTrigger: {
         pin: true,
         start: "top -200px",
-        pinType: isTouch ? 'fixed' : 'transform',
+        pinType: 'transform',
         scrub: 1,
         trigger: ".second"
     },
@@ -85,7 +85,7 @@ gsap
     scrollTrigger: {
       trigger: ".five",
       pin: true,
-      pinType: isTouch ? 'fixed' : 'transform',
+      pinType: 'transform',
       scrub: 0.5,
       start: "top top",
       end: "+=150%"

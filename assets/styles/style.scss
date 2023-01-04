@@ -13,13 +13,13 @@ html {
 
 body, .wrapper {
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   perspective: 1px;
 
   cursor: none;
-  overflow-x: hidden;
   font-size: 19px;
 }
 
@@ -654,10 +654,27 @@ img {
   .seven .wrapper .timer {
     font-size: 28vw;
   }
+  .second .image {
+    width: 100%;
+  }
+  .second .container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+  .second .title {
+    width: min-content;
+    margin-left: auto;
+  }
+  .second h1 span {
+    font-size: 72px;
+  }
+  .second h1 {
+    font-size: 32px;
+  }
 }
 
-@media screen and (max-height: 900px) {
-  .first {
-    height: auto;
+@media screen and (max-width: 500px) {
+  .second .container {
+    grid-template-columns: 100px 1fr;
   }
 }
